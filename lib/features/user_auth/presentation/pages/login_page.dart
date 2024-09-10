@@ -3,10 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:intl/intl.dart';
-import 'package:weather_app/Screens/home_screen.dart';
 import 'package:weather_app/features/user_auth/presentation/pages/sign_up_page.dart';
-import 'package:weather_app/features/user_auth/profile/profile_setup_page.dart';
 
+import '../../../../Screens/city_selection_screen.dart';
 import '../../../../services/toast.dart';
 import '../../firebase_auth_implementation/firebase_auth_services.dart';
 import '../../firebase_auth_implementation/save_user.dart';
@@ -321,9 +320,7 @@ class _LoginPageState extends State<LoginPage> {
       if (mounted) {
         Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(
-                builder: (context) =>
-                    const WeatherScreen(selectedCity: 'Lahore')),
+            MaterialPageRoute(builder: (context) => const CitySelectionPage()),
             (route) => false);
       }
     } else {
@@ -352,7 +349,8 @@ class _LoginPageState extends State<LoginPage> {
         if (mounted) {
           Navigator.pushAndRemoveUntil(
               context,
-              MaterialPageRoute(builder: (context) => const SetupProfile()),
+              MaterialPageRoute(
+                  builder: (context) => const CitySelectionPage()),
               (route) => false);
         }
       }

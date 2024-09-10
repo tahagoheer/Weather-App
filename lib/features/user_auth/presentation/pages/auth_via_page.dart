@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:intl/intl.dart';
 import 'package:weather_app/features/user_auth/presentation/pages/sign_up_page.dart';
+import '../../../../Screens/city_selection_screen.dart';
 import '../../../../services/toast.dart';
 import '../../firebase_auth_implementation/save_user.dart';
 import '../widgets/essentials.dart';
@@ -295,8 +296,10 @@ class _AuthViaPageState extends State<AuthViaPage> {
         await _firebaseAuth.signInWithCredential(credential);
         await saveUserGoogle(googleSignInAccount, joinDate);
         if (mounted) {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const LoginPage()));
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const CitySelectionPage()));
         }
       }
     } catch (e) {

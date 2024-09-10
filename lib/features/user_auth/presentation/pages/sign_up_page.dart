@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:intl/intl.dart';
+import '../../../../Screens/city_selection_screen.dart';
 import '../../../../services/toast.dart';
 import '../../firebase_auth_implementation/firebase_auth_services.dart';
 import '../../firebase_auth_implementation/save_user.dart';
-import '../../profile/profile_setup_page.dart';
 import '../widgets/essentials.dart';
 import '../widgets/form_field_container_widget.dart';
 import 'login_page.dart';
@@ -314,7 +314,8 @@ class _SignUpPageState extends State<SignUpPage> {
         if (mounted) {
           Navigator.pushAndRemoveUntil(
               context,
-              MaterialPageRoute(builder: (context) => const SetupProfile()),
+              MaterialPageRoute(
+                  builder: (context) => const CitySelectionPage()),
               (route) => false);
         }
       } else {
@@ -345,8 +346,10 @@ class _SignUpPageState extends State<SignUpPage> {
         await saveUserGoogle(googleSignInAccount, joinDate);
         showToast(message: "Successfully logged in with Google");
         if (mounted) {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const SetupProfile()));
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const CitySelectionPage()));
         }
       }
     } catch (e) {
