@@ -1,6 +1,3 @@
-Here's a complete GitHub-friendly version of the documentation, formatted for direct use in your README file:
-
-markdown
 # Weather App Documentation
 
 ## Table of Contents
