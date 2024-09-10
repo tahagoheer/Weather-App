@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'essentials.dart';
-
 class FormFieldContainerWidget extends StatefulWidget {
   final TextEditingController? controller;
   final Key? fieldKey;
@@ -59,16 +57,17 @@ class FormFieldContainerWidgetState extends State<FormFieldContainerWidget> {
           validator: widget.validator,
           onFieldSubmitted: widget.onFieldSubmitted,
           decoration: InputDecoration(
+            fillColor: Colors.white,
             focusedBorder: OutlineInputBorder(
               borderSide: const BorderSide(
-                color: EXColors.primaryDark,
+                color: Colors.blue,
                 width: 2,
               ),
               borderRadius: BorderRadius.circular(15),
             ),
             enabledBorder: OutlineInputBorder(
               borderSide: const BorderSide(
-                color: Colors.blueGrey,
+                color: Colors.blue,
                 width: 2,
               ),
               borderRadius: BorderRadius.circular(15),
@@ -76,7 +75,8 @@ class FormFieldContainerWidgetState extends State<FormFieldContainerWidget> {
             contentPadding: const EdgeInsets.all(15),
             labelText: widget.labelText,
             floatingLabelStyle: const TextStyle(
-              color: EXColors.primaryDark,
+              color: Colors.blue,
+              backgroundColor: Colors.white,
               fontSize: 15,
               fontWeight: FontWeight.w800,
               letterSpacing: 3,
@@ -93,9 +93,7 @@ class FormFieldContainerWidgetState extends State<FormFieldContainerWidget> {
                     },
                     icon: Icon(
                       isObscureText ? Icons.visibility_off : Icons.visibility,
-                      color: isObscureText == false
-                          ? EXColors.primaryDark
-                          : Colors.grey,
+                      color: isObscureText == false ? Colors.blue : Colors.grey,
                     ),
                   )
                 : null,

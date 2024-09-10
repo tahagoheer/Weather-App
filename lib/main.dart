@@ -1,6 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:weather_app/features/user_auth/presentation/pages/login_page.dart';
+import 'package:weather_app/features/user_auth/presentation/pages/auth_via_page.dart';
 import 'package:weather_app/firebase_options.dart';
 
 void main() async {
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.light(useMaterial3: true),
       darkTheme: ThemeData.dark(useMaterial3: true),
       themeMode: ThemeMode.system,
-      home: const LoginPage(),
+      home: const AuthViaPage(),
     );
   }
 }

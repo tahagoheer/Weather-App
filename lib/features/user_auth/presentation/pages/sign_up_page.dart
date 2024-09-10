@@ -45,251 +45,243 @@ class _SignUpPageState extends State<SignUpPage> {
         keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
         child: Container(
           width: MediaQuery.of(context).size.width,
-          decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage(
-                      'assets/images/Pexels Photo by Mikhail Nilov.png'),
-                  fit: BoxFit.cover)),
+          decoration: const BoxDecoration(color: Colors.blue),
           child: Column(
             children: [
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.25,
+                height: MediaQuery.of(context).size.height * 0.30,
                 child: Padding(
                   padding: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height * 0.1),
+                      top: MediaQuery.of(context).size.height * 0.07),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Image.asset(
-                        'assets/images/ExploreXpertLogo.png',
+                        'assets/images/loginpageimage.png',
                         scale: 2.3,
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Image.asset(
-                        'assets/images/ExploreXpertTitle.png',
-                        scale: 1.3,
                       ),
                     ],
                   ),
                 ),
               ),
-              Container(
-                height: MediaQuery.of(context).size.height * 0.75,
-                decoration: const BoxDecoration(
-                    color: Color.fromRGBO(252, 252, 252, 0.75),
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(55),
-                        topRight: Radius.circular(55))),
-                child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(
-                              bottom:
-                                  MediaQuery.of(context).size.height * 0.02),
-                          child: const Text(
-                            'Welcome!',
-                            style: TextStyle(
-                              fontSize: 50,
-                              fontWeight: FontWeight.bold,
-                              color: EXColors.primaryDark,
+              Padding(
+                padding: const EdgeInsets.only(top: 20),
+                child: Container(
+                  height: MediaQuery.of(context).size.height * 0.80,
+                  decoration: const BoxDecoration(
+                      color: Color.fromRGBO(252, 252, 252, 0.50),
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(55),
+                          topRight: Radius.circular(55))),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 30, vertical: 30),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(
+                                bottom:
+                                    MediaQuery.of(context).size.height * 0.005),
+                            child: const Text(
+                              'Welcome!',
+                              style: TextStyle(
+                                fontSize: 50,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.blue,
+                              ),
                             ),
                           ),
-                        ),
-                        FormFieldContainerWidget(
-                          hintText: 'Enter Full Name',
-                          labelText: 'Full Name',
-                          isPasswordField: false,
-                          controller: _fullnameController,
-                        ),
-                        const SizedBox(height: 10),
-                        FormFieldContainerWidget(
-                          hintText: 'Enter Your Email',
-                          labelText: 'Email',
-                          isPasswordField: false,
-                          controller: _emailController,
-                        ),
-                        const SizedBox(height: 10),
-                        const SizedBox(height: 10),
-                        FormFieldContainerWidget(
-                          hintText: 'Set a Password',
-                          labelText: 'Password',
-                          isPasswordField: true,
-                          controller: _passwordController,
-                        ),
-                        const SizedBox(height: 10),
-                        FormFieldContainerWidget(
-                          hintText: 'Confirm Your Password',
-                          labelText: 'Confirm Password',
-                          isPasswordField: true,
-                          controller: _confirmPasswordController,
-                        ),
-                        const SizedBox(height: 15),
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.50,
-                          child: MaterialButton(
-                            onPressed: () {
-                              _signUp();
-                            },
-                            color: EXColors.primaryDark,
-                            height: 60,
-                            mouseCursor: WidgetStateMouseCursor.clickable,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(15)),
-                            child: Center(
-                                child: isSigningUp
-                                    ? const CircularProgressIndicator(
-                                        color: Colors.white,
-                                      )
-                                    : const Text(
-                                        'Sign Up',
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold),
-                                      )),
+                          FormFieldContainerWidget(
+                            hintText: 'Enter Full Name',
+                            labelText: 'Full Name',
+                            isPasswordField: false,
+                            controller: _fullnameController,
                           ),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Text("Already have an account?",
-                                style: TextStyle(fontSize: 16)),
-                            const SizedBox(
-                              width: 3,
-                              height: 60,
-                            ),
-                            TextButton(
+                          const SizedBox(height: 10),
+                          FormFieldContainerWidget(
+                            hintText: 'Enter Your Email',
+                            labelText: 'Email',
+                            isPasswordField: false,
+                            controller: _emailController,
+                          ),
+                          const SizedBox(height: 10),
+                          FormFieldContainerWidget(
+                            hintText: 'Set a Password',
+                            labelText: 'Password',
+                            isPasswordField: true,
+                            controller: _passwordController,
+                          ),
+                          const SizedBox(height: 10),
+                          FormFieldContainerWidget(
+                            hintText: 'Confirm Your Password',
+                            labelText: 'Confirm Password',
+                            isPasswordField: true,
+                            controller: _confirmPasswordController,
+                          ),
+                          const SizedBox(height: 15),
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width * 0.50,
+                            child: MaterialButton(
                               onPressed: () {
-                                Navigator.pushAndRemoveUntil(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const LoginPage()),
-                                    (route) => false);
+                                _signUp();
                               },
-                              child: const Text(
-                                'Login',
-                                style: TextStyle(
-                                    color: EXColors.primaryDark,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            )
-                          ],
-                        ),
-                        const Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SizedBox(
-                              height: 50,
-                              width: 100,
-                              child: Divider(
-                                color: EXColors.secondaryMedium,
-                                height: 20,
-                                thickness: 1,
-                              ),
+                              color: Colors.blue,
+                              height: 60,
+                              mouseCursor: WidgetStateMouseCursor.clickable,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15)),
+                              child: Center(
+                                  child: isSigningUp
+                                      ? const CircularProgressIndicator(
+                                          color: Colors.white,
+                                        )
+                                      : const Text(
+                                          'Sign Up',
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.bold),
+                                        )),
                             ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 10),
-                              child: Text(
-                                'OR',
-                                style: TextStyle(
-                                    color: EXColors.secondaryMedium,
-                                    fontWeight: FontWeight.w500),
-                              ),
-                            ),
-                            SizedBox(
-                              height: 50,
-                              width: 100,
-                              child: Divider(
-                                color: EXColors.secondaryMedium,
-                                height: 20,
-                                thickness: 1,
-                              ),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SizedBox(
-                              width: 60,
-                              child: MaterialButton(
-                                onPressed: _signInWithGoogle,
-                                color: Colors.red,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Text("Already have an account?",
+                                  style: TextStyle(
+                                      fontSize: 16, color: Colors.blue)),
+                              const SizedBox(
+                                width: 3,
                                 height: 60,
-                                mouseCursor: WidgetStateMouseCursor.clickable,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(50)),
-                                child: const Center(
-                                  child: Icon(
-                                    FontAwesomeIcons.google,
-                                    color: Colors.white,
-                                    size: 30,
-                                  ),
-                                ),
                               ),
-                            ),
-                            const SizedBox(width: 20),
-                            SizedBox(
-                              width: 60,
-                              child: MaterialButton(
+                              TextButton(
                                 onPressed: () {
-                                  Navigator.push(
+                                  Navigator.pushAndRemoveUntil(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              const SignUpPage()));
+                                              const LoginPage()),
+                                      (route) => false);
                                 },
-                                color: Colors.blueAccent,
-                                height: 60,
-                                mouseCursor: WidgetStateMouseCursor.clickable,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(50)),
-                                child: const Center(
-                                  child: Icon(
-                                    Icons.facebook,
-                                    color: Colors.white,
-                                    size: 30,
+                                child: const Text(
+                                  'Login',
+                                  style: TextStyle(
+                                      color: Colors.blue,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              )
+                            ],
+                          ),
+                          const Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                height: 50,
+                                width: 100,
+                                child: Divider(
+                                  color: EXColors.secondaryMedium,
+                                  height: 20,
+                                  thickness: 1,
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 10),
+                                child: Text(
+                                  'OR',
+                                  style: TextStyle(
+                                      color: EXColors.secondaryMedium,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 50,
+                                width: 100,
+                                child: Divider(
+                                  color: EXColors.secondaryMedium,
+                                  height: 20,
+                                  thickness: 1,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                width: 60,
+                                child: MaterialButton(
+                                  onPressed: _signInWithGoogle,
+                                  color: Colors.red,
+                                  height: 60,
+                                  mouseCursor: WidgetStateMouseCursor.clickable,
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(50)),
+                                  child: const Center(
+                                    child: Icon(
+                                      FontAwesomeIcons.google,
+                                      color: Colors.white,
+                                      size: 30,
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                            const SizedBox(width: 20),
-                            SizedBox(
-                              width: 60,
-                              child: MaterialButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              const SignUpPage()));
-                                },
-                                color: EXColors.secondaryMedium,
-                                height: 60,
-                                mouseCursor: WidgetStateMouseCursor.clickable,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(50)),
-                                child: const Center(
-                                  child: Icon(
-                                    Icons.apple,
-                                    color: Colors.white,
-                                    size: 30,
+                              const SizedBox(width: 20),
+                              SizedBox(
+                                width: 60,
+                                child: MaterialButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const SignUpPage()));
+                                  },
+                                  color: Colors.blueAccent,
+                                  height: 60,
+                                  mouseCursor: WidgetStateMouseCursor.clickable,
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(50)),
+                                  child: const Center(
+                                    child: Icon(
+                                      Icons.facebook,
+                                      color: Colors.white,
+                                      size: 30,
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
-                        )
-                      ],
+                              const SizedBox(width: 20),
+                              SizedBox(
+                                width: 60,
+                                child: MaterialButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const SignUpPage()));
+                                  },
+                                  color: EXColors.secondaryMedium,
+                                  height: 60,
+                                  mouseCursor: WidgetStateMouseCursor.clickable,
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(50)),
+                                  child: const Center(
+                                    child: Icon(
+                                      Icons.apple,
+                                      color: Colors.white,
+                                      size: 30,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),

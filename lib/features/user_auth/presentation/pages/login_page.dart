@@ -43,261 +43,254 @@ class _LoginPageState extends State<LoginPage> {
         keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
         child: Container(
           width: MediaQuery.of(context).size.width,
-          decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage(
-                      'assets/images/Pexels Photo by Mikhail Nilov.png'),
-                  fit: BoxFit.cover)),
+          decoration: const BoxDecoration(color: Colors.blue),
           child: Column(
             children: [
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.30,
                 child: Padding(
                   padding: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height * 0.1),
+                      top: MediaQuery.of(context).size.height * 0.07),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Image.asset(
-                        'assets/images/ExploreWeatherLogo.png',
+                        'assets/images/loginpageimage.png',
                         scale: 2.3,
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Image.asset(
-                        'assets/images/ExploreXpertTitle.png',
-                        scale: 1.3,
                       ),
                     ],
                   ),
                 ),
               ),
-              Container(
-                height: MediaQuery.of(context).size.height * 0.70,
-                decoration: const BoxDecoration(
-                    color: Color.fromRGBO(252, 252, 252, 0.75),
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(55),
-                        topRight: Radius.circular(55))),
-                child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(
-                              bottom:
-                                  MediaQuery.of(context).size.height * 0.05),
-                          child: const Text(
-                            'Login',
-                            style: TextStyle(
-                              fontSize: 50,
-                              fontWeight: FontWeight.bold,
-                              color: EXColors.primaryDark,
+              Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Container(
+                  height: MediaQuery.of(context).size.height * 0.69,
+                  decoration: const BoxDecoration(
+                      color: Color.fromRGBO(252, 252, 252, 0.50),
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(55),
+                          topRight: Radius.circular(55))),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 30, vertical: 40),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(
+                                bottom:
+                                    MediaQuery.of(context).size.height * 0.01),
+                            child: const Text(
+                              'Login',
+                              style: TextStyle(
+                                fontSize: 50,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.blue,
+                              ),
                             ),
                           ),
-                        ),
-                        FormFieldContainerWidget(
-                          hintText: 'Email',
-                          labelText: 'Email',
-                          isPasswordField: false,
-                          controller: _emailController,
-                        ),
-                        const SizedBox(height: 10),
-                        FormFieldContainerWidget(
-                          hintText: 'Password',
-                          labelText: 'Password',
-                          isPasswordField: true,
-                          controller: _passwordController,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            TextButton(
-                              onPressed: () {
-                                Navigator.pushAndRemoveUntil(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const ForgotPasswordPage()),
-                                    (route) => false);
-                              },
-                              child: const Text(
-                                'Forgot Password?',
-                                style: TextStyle(
-                                  color: EXColors.primaryDark,
-                                  fontSize: 14,
-                                  decoration: TextDecoration.underline,
-                                  decorationColor: EXColors.primaryDark,
-                                  decorationThickness: 1.8,
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                        const SizedBox(height: 10),
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.50,
-                          child: MaterialButton(
-                            onPressed: () {
-                              _signIn();
-                            },
-                            color: EXColors.primaryDark,
-                            height: 60,
-                            mouseCursor: WidgetStateMouseCursor.clickable,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(15)),
-                            child: Center(
-                                child: _isSigning
-                                    ? const CircularProgressIndicator(
-                                        color: Colors.white,
-                                      )
-                                    : const Text(
-                                        'Login',
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold),
-                                      )),
+                          FormFieldContainerWidget(
+                            hintText: 'Email',
+                            labelText: 'Email',
+                            isPasswordField: false,
+                            controller: _emailController,
                           ),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Text("Don't have an account?",
-                                style: TextStyle(fontSize: 16)),
-                            const SizedBox(
-                              width: 3,
+                          const SizedBox(height: 10),
+                          FormFieldContainerWidget(
+                            hintText: 'Password',
+                            labelText: 'Password',
+                            isPasswordField: true,
+                            controller: _passwordController,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pushAndRemoveUntil(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const ForgotPasswordPage()),
+                                      (route) => false);
+                                },
+                                child: const Text(
+                                  'Forgot Password?',
+                                  style: TextStyle(
+                                    color: Colors.blue,
+                                    fontSize: 14,
+                                    decoration: TextDecoration.underline,
+                                    decorationColor: Colors.blue,
+                                    decorationThickness: 1.8,
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                          const SizedBox(height: 10),
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width * 0.50,
+                            child: MaterialButton(
+                              onPressed: () {
+                                _signIn();
+                              },
+                              color: Colors.blue,
                               height: 60,
+                              mouseCursor: WidgetStateMouseCursor.clickable,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15)),
+                              child: Center(
+                                  child: _isSigning
+                                      ? const CircularProgressIndicator(
+                                          color: Colors.white,
+                                        )
+                                      : const Text(
+                                          'Login',
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.bold),
+                                        )),
                             ),
-                            TextButton(
-                              onPressed: () {
-                                Navigator.pushAndRemoveUntil(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const SignUpPage()),
-                                    (route) => false);
-                              },
-                              child: const Text(
-                                'SignUp',
-                                style: TextStyle(
-                                    color: EXColors.primaryDark,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            )
-                          ],
-                        ),
-                        const Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SizedBox(
-                              height: 50,
-                              width: 100,
-                              child: Divider(
-                                color: EXColors.secondaryMedium,
-                                height: 20,
-                                thickness: 1,
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 10),
-                              child: Text(
-                                'OR',
-                                style: TextStyle(
-                                    color: EXColors.secondaryMedium,
-                                    fontWeight: FontWeight.w500),
-                              ),
-                            ),
-                            SizedBox(
-                              height: 50,
-                              width: 100,
-                              child: Divider(
-                                color: EXColors.secondaryMedium,
-                                height: 20,
-                                thickness: 1,
-                              ),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SizedBox(
-                              width: 60,
-                              child: MaterialButton(
-                                onPressed: _signInWithGoogle,
-                                color: Colors.red,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Text("Don't have an account?",
+                                  style: TextStyle(
+                                      fontSize: 16, color: Colors.blue)),
+                              const SizedBox(
+                                width: 3,
                                 height: 60,
-                                mouseCursor: WidgetStateMouseCursor.clickable,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(50)),
-                                child: const Center(
-                                  child: Icon(
-                                    FontAwesomeIcons.google,
-                                    color: Colors.white,
-                                    size: 30,
-                                  ),
-                                ),
                               ),
-                            ),
-                            const SizedBox(width: 20),
-                            SizedBox(
-                              width: 60,
-                              child: MaterialButton(
+                              TextButton(
                                 onPressed: () {
-                                  Navigator.push(
+                                  Navigator.pushAndRemoveUntil(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              const SignUpPage()));
+                                              const SignUpPage()),
+                                      (route) => false);
                                 },
-                                color: Colors.blueAccent,
-                                height: 60,
-                                mouseCursor: WidgetStateMouseCursor.clickable,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(50)),
-                                child: const Center(
-                                  child: Icon(
-                                    Icons.facebook,
-                                    color: Colors.white,
-                                    size: 30,
+                                child: const Text(
+                                  'SignUp',
+                                  style: TextStyle(
+                                      color: Colors.blue,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              )
+                            ],
+                          ),
+                          const Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                height: 50,
+                                width: 100,
+                                child: Divider(
+                                  color: EXColors.secondaryMedium,
+                                  height: 20,
+                                  thickness: 1,
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 10),
+                                child: Text(
+                                  'OR',
+                                  style: TextStyle(
+                                      color: EXColors.secondaryMedium,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 50,
+                                width: 100,
+                                child: Divider(
+                                  color: EXColors.secondaryMedium,
+                                  height: 20,
+                                  thickness: 1,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                width: 60,
+                                child: MaterialButton(
+                                  onPressed: _signInWithGoogle,
+                                  color: Colors.red,
+                                  height: 60,
+                                  mouseCursor: WidgetStateMouseCursor.clickable,
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(50)),
+                                  child: const Center(
+                                    child: Icon(
+                                      FontAwesomeIcons.google,
+                                      color: Colors.white,
+                                      size: 30,
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                            const SizedBox(width: 20),
-                            SizedBox(
-                              width: 60,
-                              child: MaterialButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              const SignUpPage()));
-                                },
-                                color: EXColors.secondaryMedium,
-                                height: 60,
-                                mouseCursor: WidgetStateMouseCursor.clickable,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(50)),
-                                child: const Center(
-                                  child: Icon(
-                                    Icons.apple,
-                                    color: Colors.white,
-                                    size: 30,
+                              const SizedBox(width: 20),
+                              SizedBox(
+                                width: 60,
+                                child: MaterialButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const SignUpPage()));
+                                  },
+                                  color: Colors.blueAccent,
+                                  height: 60,
+                                  mouseCursor: WidgetStateMouseCursor.clickable,
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(50)),
+                                  child: const Center(
+                                    child: Icon(
+                                      Icons.facebook,
+                                      color: Colors.white,
+                                      size: 30,
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
-                        )
-                      ],
+                              const SizedBox(width: 20),
+                              SizedBox(
+                                width: 60,
+                                child: MaterialButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const SignUpPage()));
+                                  },
+                                  color: EXColors.secondaryMedium,
+                                  height: 60,
+                                  mouseCursor: WidgetStateMouseCursor.clickable,
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(50)),
+                                  child: const Center(
+                                    child: Icon(
+                                      Icons.apple,
+                                      color: Colors.white,
+                                      size: 30,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),

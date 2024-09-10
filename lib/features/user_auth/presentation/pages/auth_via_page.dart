@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:intl/intl.dart';
-import 'package:weather_app/Screens/home_screen.dart';
 import 'package:weather_app/features/user_auth/presentation/pages/sign_up_page.dart';
 import '../../../../services/toast.dart';
 import '../../firebase_auth_implementation/save_user.dart';
@@ -27,11 +26,7 @@ class _AuthViaPageState extends State<AuthViaPage> {
       body: SingleChildScrollView(
         child: Container(
           width: MediaQuery.of(context).size.width,
-          decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage(
-                      'assets/images/Pexels Photo by Mikhail Nilov.png'),
-                  fit: BoxFit.cover)),
+          decoration: const BoxDecoration(color: Colors.blue),
           child: Column(
             children: [
               SizedBox(
@@ -45,12 +40,8 @@ class _AuthViaPageState extends State<AuthViaPage> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Image.asset(
-                        'assets/images/ExploreXpertLogo.png',
-                        scale: 1,
-                      ),
-                      Image.asset(
-                        'assets/images/ExploreXpertTitle.png',
-                        scale: 1,
+                        'assets/images/loginpageimage.png',
+                        scale: 2,
                       ),
                     ],
                   ),
@@ -91,7 +82,7 @@ class _AuthViaPageState extends State<AuthViaPage> {
                                   child: Text(
                                     'SignUp',
                                     style: TextStyle(
-                                        color: EXColors.primaryDark,
+                                        color: Colors.blue,
                                         fontSize: 20,
                                         fontWeight: FontWeight.bold),
                                   ),
@@ -108,7 +99,7 @@ class _AuthViaPageState extends State<AuthViaPage> {
                                           builder: (context) =>
                                               const LoginPage()));
                                 },
-                                color: EXColors.primaryDark,
+                                color: Colors.blue,
                                 height: 60,
                                 mouseCursor: WidgetStateMouseCursor.clickable,
                                 shape: RoundedRectangleBorder(
@@ -304,11 +295,8 @@ class _AuthViaPageState extends State<AuthViaPage> {
         await _firebaseAuth.signInWithCredential(credential);
         await saveUserGoogle(googleSignInAccount, joinDate);
         if (mounted) {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) =>
-                      const WeatherScreen(selectedCity: 'Lahore')));
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const LoginPage()));
         }
       }
     } catch (e) {
