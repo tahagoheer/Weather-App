@@ -71,7 +71,7 @@ The app is structured in a modular way to ensure code maintainability and scalab
 ### Steps to Run
 1. **Clone the Repository**:
    ```bash
-   git clone [<repository-url>](https://github.com/tahagoheer/Weather-App)
+   git clone https://github.com/tahagoheer/Weather-App
 
 2. **Navigate to the Project Directory**:
    ```bash
