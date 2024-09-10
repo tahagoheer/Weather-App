@@ -60,7 +60,7 @@ class _LoginPageState extends State<LoginPage> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Image.asset(
-                        'assets/images/ExploreXpertLogo.png',
+                        'assets/images/ExploreWeatherLogo.png',
                         scale: 2.3,
                       ),
                       const SizedBox(
