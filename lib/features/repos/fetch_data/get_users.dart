@@ -4,7 +4,7 @@ import '../../../services/toast.dart';
 
 class FireStoreService {
   final CollectionReference users =
-      FirebaseFirestore.instance.collection('users_traveler');
+      FirebaseFirestore.instance.collection('users');
   Stream<QuerySnapshot> getUsersStream() {
     final usersStream = users.snapshots();
     return usersStream;
