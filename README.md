@@ -100,6 +100,3 @@ The app is structured in a modular way to ensure code maintainability and scalab
 - Verify that Firebase is correctly configured for both Android and iOS.
 - Confirm that API keys are correctly placed and used in the application.
 
----
-
-Replace `<repository-url>` with the actual URL of your GitHub repository before using. This README structure will provide a professional and clear guide for anyone interacting with your project. Let me know if you need further adjustments!
